@@ -18,12 +18,7 @@ public class URGSample : MonoBehaviour {
 			distList = new List<long>();
 			idList = new List<int>();
 		}
-	}
-
-	[SerializeField]
-	string ip_address = "192.168.0.10";
-	[SerializeField]
-	int port_number = 10940;
+	}	
 
 	List<DetectObject> detectObjects;
 	List<int> detectIdList;
@@ -31,7 +26,7 @@ public class URGSample : MonoBehaviour {
 	private Vector3[] directions;
 	private bool cached = false;
 
-	UrgDeviceEthernet urg;
+	UrgDevice urg;
 	public float scale = 0.1f;
 	public float limit = 300.0f;//mm
 	public int noiseLimit = 5;
@@ -51,14 +46,12 @@ public class URGSample : MonoBehaviour {
 
 	int drawCount;
 
-
-	// Use this for initialization
 	void Start () {
 		distances = new List<long>();
 		strengths = new List<long>();
 
-		urg = this.gameObject.AddComponent<UrgDeviceEthernet>();
-		urg.StartTCP(ip_address, port_number);
+		urg = this.gameObject.GetComponent<UrgDevice>();
+		urg.StartDevice();
 	}
 	
 	// Update is called once per frame
@@ -223,7 +216,7 @@ public class URGSample : MonoBehaviour {
 			if(dir.y > 0){
 				DetectObject detect;
 				if(endGroup){
-					Vector3 pt = dist * dir * scale;
+//					Vector3 pt = dist * dir * scale;
 					if(dist < limit && (delta < deltaLimit && delta1 < deltaLimit)){
 //					bool isArea = detectAreaRect.Contains(pt);
 //					if(isArea && (delta < deltaLimit && delta1 < deltaLimit)){

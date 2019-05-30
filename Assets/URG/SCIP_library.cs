@@ -23,35 +23,35 @@ namespace SCIP_library
         /// <returns>created command</returns>
         public static string MD(int start, int end, int grouping = 1, int skips = 0, int scans = 0)
         {
-			return UrgDevice.GetCMDString(UrgDevice.CMD.MD) + start.ToString("D4") + end.ToString("D4") + grouping.ToString("D2") + skips.ToString("D1") + scans.ToString("D2") + END;
+			return UrgDevice.GetCMDString(CMD.MD) + start.ToString("D4") + end.ToString("D4") + grouping.ToString("D2") + skips.ToString("D1") + scans.ToString("D2") + END;
         }
 		public static string ME(int start, int end, int grouping = 1, int skips = 0, int scans = 0)
 		{
-			return UrgDevice.GetCMDString(UrgDevice.CMD.ME) + start.ToString("D4") + end.ToString("D4") + grouping.ToString("D2") + skips.ToString("D1") + scans.ToString("D2") + END;
+			return UrgDevice.GetCMDString(CMD.ME) + start.ToString("D4") + end.ToString("D4") + grouping.ToString("D2") + skips.ToString("D1") + scans.ToString("D2") + END;
 		}
 
 		public static string BM()
 		{
-			return UrgDevice.GetCMDString(UrgDevice.CMD.BM) + END;
+			return UrgDevice.GetCMDString(CMD.BM) + END;
 		}
 		public static string GD(int start, int end, int grouping = 1)
 		{
-			return UrgDevice.GetCMDString(UrgDevice.CMD.GD) + start.ToString("D4") + end.ToString("D4") + grouping.ToString("D2") + END;
+			return UrgDevice.GetCMDString(CMD.GD) + start.ToString("D4") + end.ToString("D4") + grouping.ToString("D2") + END;
 		}
 		
 		public static string VV()
         {
-			return UrgDevice.CMD.VV.ToString() + END;
+			return CMD.VV.ToString() + END;
         }
 
         public static string II()
         {
-			return UrgDevice.GetCMDString(UrgDevice.CMD.II) + END;
+			return UrgDevice.GetCMDString(CMD.II) + END;
         }
 
         public static string PP()
         {
-			return UrgDevice.GetCMDString(UrgDevice.CMD.PP) + END;
+			return UrgDevice.GetCMDString(CMD.PP) + END;
         }
 
         public static string SCIP2()
@@ -61,7 +61,7 @@ namespace SCIP_library
 
         public static string QT()
         {
-			return UrgDevice.GetCMDString(UrgDevice.CMD.QT) + END;
+			return UrgDevice.GetCMDString(CMD.QT) + END;
         }
     }
 
